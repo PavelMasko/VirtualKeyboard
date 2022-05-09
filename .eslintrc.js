@@ -10,6 +10,8 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  rules: {
-  },
+  // rules: {
+  //   'import/extensions': ['error', {
+  //     "js": "always"
+  //   }]
 };
