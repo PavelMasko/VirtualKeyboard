@@ -1,12 +1,15 @@
 import keysObj from './keys.js';
 
 const keyArray = Object.keys(keysObj);
-
 const settings = {
   language: 'en',
-
   caps: false,
 };
+const main = document.createElement('main');
+const wrapper = document.createElement('div');
+const textarea = document.createElement('textarea');
+const keyboard = document.createElement('div');
+const title = document.createElement('h1');
 
 const createKeys = () => {
   const fragment = document.createDocumentFragment();
@@ -48,19 +51,13 @@ const createKeys = () => {
 };
 
 const createKeyboard = () => {
-  const main = document.createElement('main');
-  const wrapper = document.createElement('div');
-  const textarea = document.createElement('textarea');
-  const keyboard = document.createElement('div');
-  const title = document.createElement('h1');
-
   main.classList.add('main');
   wrapper.classList.add('wrapper');
   textarea.classList.add('textarea');
   textarea.setAttribute('type', 'text');
   textarea.autofocus = true;
   keyboard.classList.add('keyboard');
-  title.innerText = 'The keyboard was created on Windows. \n To switch the language, press left ctrl + alt';
+  title.innerText = 'Created on Windows. \n To switch the language, press left ctrl + alt';
 
   document.body.append(main);
   main.append(wrapper);
@@ -68,8 +65,42 @@ const createKeyboard = () => {
 
   const keys = createKeys();
   keyboard.append(keys);
+  eventMouse();
+  eventKeyboard();
 };
 
+const eventMouse = () => {
+  wrapper.addEventListener('mousedown', (e) => {
+    if (e.target.closest('.key-btn')) {
+      const activeElem = e.target.closest('.key-btn');
+      activeElem.classList.add('pressed');
+    }
+  });
+  wrapper.addEventListener('mouseup', (e) => {
+    if (e.target.closest('.key-btn')) {
+      const activeElem = e.target.closest('.key-btn');
+      activeElem.classList.remove('pressed');
+      textarea.focus();
+    }
+  });
+};
+
+const eventKeyboard = () => {
+  document.addEventListener('keydown', (e) => {
+    e.preventDefault();
+    const activeBtn = document.querySelector(`[data-code="${e.code}"]`);
+    if (activeBtn) {
+      activeBtn.classList.add('pressed');
+    }
+  });
+  document.addEventListener('keyup', (e) => {
+    e.preventDefault();
+    const activeBtn = document.querySelector(`[data-code="${e.code}"]`);
+    if (activeBtn) {
+      activeBtn.classList.remove('pressed');
+    }
+  });
+};
 window.onload = () => {
   createKeyboard();
 };
