@@ -55,6 +55,9 @@ h1 {
   cursor: pointer;
   user-select: none;
 }
+.function-btn{
+  background:#242424;
+}
 .key-btn.small-btn {
   width: 40px;
 }
@@ -79,7 +82,7 @@ h1 {
   position: relative;
 }
 .enter{
-  color: rgb(255, 255, 255);
+  color: #020202;
   background-color: #80cbc4;
 }
 
@@ -102,14 +105,17 @@ h1 {
 }
 
 .active.capslock {
-  background: #eeeded;
-  color: #616161;
+  background: #65aca5;
+  color: #ffffff;
 }
 .pressed.enter {
   background-color: #65aca5;
   color: #ffffff;
 }
 
+.function-btn.pressed{
+  background-color: #65aca5;
+}
 
 .textarea {
   width: 890px;
