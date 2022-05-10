@@ -134,7 +134,7 @@ const keysIndeteficator = {
     ru: { btnDn: 'ъ', btnUp: 'Ъ' },
     id: 'small',
   },
-  IntlBackslash: {
+  Backslash: {
     en: { btnDn: '\\', btnUp: '|' },
     ru: { btnDn: '\\', btnUp: '/' },
     id: 'small',
