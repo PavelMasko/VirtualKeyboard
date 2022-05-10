@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  margin: 0;
+  background-color: #303030;
+}
+
+h1 {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.keyboard {
+  max-width: 890px;
+  min-height: 100px;
+  background-color: #000000;
+  padding: 30px 10px 15px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.key-btn {
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 5px;
+  background:#2d3134;
+  border-radius: 5px;
+  color: #f1eff4;
+  cursor: pointer;
+  user-select: none;
+}
+.function-btn{
+  background:#242424;
+}
+.key-btn.small-btn {
+  width: 40px;
+}
+.key-btn.ctrl-right-btn {
+  width: 50px;
+}
+.key-btn.medium-btn {
+  width: 60px;
+}
+.key-btn.large-btn {
+  width: 110px;
+}
+.key-btn.xxl-btn {
+  width: 379px;
+}
+
+.key-btn.capslock {
+  position: relative;
+}
+
+.capslock {
+  position: relative;
+}
+.enter{
+  color: #020202;
+  background-color: #80cbc4;
+}
+
+.pressed {
+  top: 2px;
+  background: #1a1c1e;
+  color: #ffffff;
+  position: relative;
+  transition: all 0.2s;
+}
+
+
+
+.capslock-status {
+  color: #616161;
+  font-size: 12px;
+  position: absolute;
+  top: 0px;
+  right: 5px;
+}
+
+.active.capslock {
+  background: #65aca5;
+  color: #ffffff;
+}
+.pressed.enter {
+  background-color: #65aca5;
+  color: #ffffff;
+}
+
+.function-btn.pressed{
+  background-color: #65aca5;
+}
+
+.textarea {
+  width: 890px;
+  height: 140px;
+  resize: none;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  background-color: #616161;
+  line-height: 22px;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
